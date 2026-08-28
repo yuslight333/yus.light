@@ -132,6 +132,25 @@ h2{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(1.6rem,3vw,
 .mailrow a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;}
 footer{background:var(--navy);color:rgba(246,243,236,.4);text-align:center;padding:2.6rem 1.6rem 3.2rem;border-top:1px solid rgba(246,243,236,.08);font-size:.82rem;letter-spacing:.06em;}
 footer .fnote{font-family:'Cormorant Garamond','Noto Serif TC',serif;color:rgba(216,188,133,.55);letter-spacing:.3em;display:block;margin-bottom:1rem;}
+.btn{animation:pulseglow 4.5s ease-in-out infinite;}
+@keyframes pulseglow{0%,100%{box-shadow:0 0 0 0 rgba(199,165,102,.28);}50%{box-shadow:0 0 34px 4px rgba(199,165,102,.34);}}
+.rail{display:flex;justify-content:space-between;align-items:flex-start;position:relative;margin:2.6rem 0 .6rem;padding:0 .4rem;}
+.rail::before{content:"";position:absolute;left:9%;right:9%;top:11px;height:1px;background:linear-gradient(90deg,rgba(199,165,102,.14),rgba(199,165,102,.8));}
+.rstep{position:relative;text-align:center;width:23%;}
+.rdot{width:22px;height:22px;border-radius:50%;margin:0 auto;background:var(--navy);border:1px solid var(--gold);}
+.rdot.q{background:linear-gradient(90deg,var(--navy) 50%,var(--gold) 50%);}
+.rdot.f{background:var(--gold);border-color:var(--gold);}
+.rdot.d{border-style:dashed;border-color:rgba(199,165,102,.55);}
+.rlab{font-size:.76rem;letter-spacing:.1em;color:rgba(246,243,236,.72);margin-top:.6rem;line-height:1.7;}
+.rlab i{display:block;font-style:normal;font-size:.7rem;color:rgba(246,243,236,.4);letter-spacing:.06em;}
+.take{border-top:1px solid rgba(246,243,236,.1);margin-top:3.4rem;padding-top:2.6rem;}
+.take .tk{font-size:.72rem;letter-spacing:.4em;color:var(--gold);margin-bottom:.6rem;}
+.take .tsub{font-family:'Cormorant Garamond','Noto Serif TC',serif;font-style:italic;color:rgba(246,243,236,.5);font-size:.98rem;margin-bottom:1.8rem;}
+.take .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+.take .it{border-top:1px solid rgba(199,165,102,.45);padding-top:1rem;}
+.take .it b{display:block;font-weight:400;color:var(--gold2);font-size:1.06rem;line-height:1.65;letter-spacing:.03em;}
+.take .it span{display:block;color:rgba(246,243,236,.55);font-size:.9rem;line-height:1.8;margin-top:.5rem;}
+@media(max-width:720px){.rail{margin:2rem 0 .4rem;}.rlab{font-size:.68rem;letter-spacing:.04em;}.rlab i{font-size:.64rem;}.take .grid{grid-template-columns:1fr;gap:1.2rem;}.take{margin-top:2.6rem;padding-top:2rem;}}
 @keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
 @keyframes twinkle{0%,100%{opacity:.3;}50%{opacity:1;}}
 @keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -164,8 +183,9 @@ footer .fnote{font-family:'Cormorant Garamond','Noto Serif TC',serif;color:rgba(
       <p class="eyebrow">YUS <i>· mindful & art</i></p>
       <h1>Mindful & Art —<br>letting life feel<br><span class="hl">lighter</span>.</h1>
       <p class="lead hand">Gently exploring what it means to be human, through beauty and art.<br>Not by pushing harder — by finding your way back to ease.</p>
+      <p class="lead hand" style="margin-top:1rem;color:rgba(216,188,133,.92);border-left:1px solid rgba(199,165,102,.45);padding-left:1rem;">Lighter isn't the finish line.<br>It's having the energy to go where you actually want to go.</p>
       <div class="hero-cta">
-        <a class="btn" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener">Book a Session</a>
+        <a class="btn" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener">Give yourself an hour</a>
         <a class="scrolldown" href="#about">Scroll down ↓</a>
       </div>
     </div>
@@ -198,7 +218,13 @@ footer .fnote{font-family:'Cormorant Garamond','Noto Serif TC',serif;color:rgba(
   <div class="wrap">
     <p class="tag">Services · Three Ways to Begin</p>
     <div class="rule"></div>
-    <h2>Like the moon, every phase<br>of you has its own light.</h2>
+    <h2>The moon never stays<br>in the same place. Neither do you.</h2>
+      <div class="rail" aria-hidden="true">
+        <div class="rstep"><div class="rdot"></div><div class="rlab">New<i>notice it</i></div></div>
+        <div class="rstep"><div class="rdot q"></div><div class="rlab">First quarter<i>make something</i></div></div>
+        <div class="rstep"><div class="rdot f"></div><div class="rlab">Full<i>keep it</i></div></div>
+        <div class="rstep"><div class="rdot d"></div><div class="rlab">Dark<i>begin again</i></div></div>
+      </div>
     <div style="margin-top:2.6rem;">
       <div class="card">
         <svg class="mphase" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#C7A566" stroke-width="1.3"/></svg>
@@ -221,8 +247,8 @@ You really don’t need to know how to draw.<br>
         <div>
           <span class="phase">FIRST QUARTER</span>
           <h3>Mindful Art Workshop</h3>
-          <p>Small groups. Using brush and colour to put feelings on paper that words can't quite reach. <span class="soft">(No drawing skill required — how "good" it looks was never the point.)</span> Held occasionally across Asia — past workshops in Shanghai, Kuala Lumpur, and Bali — and available for private/corporate bookings.</p>
-          <span class="signup">Workshops run occasionally across Asia. If you're interested, <a href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">leave your email and city here →</a> and we'll let you know when the next one opens near you.</span>
+          <p>Small groups. Using brush and colour to put feelings on paper that words can't quite reach. <span class="soft">(No drawing skill required — how "good" it looks was never the point.)</span> Held regularly across Asia — past workshops in Shanghai, Taipei, and Bali — and available for private and corporate groups. <span class="soft">(Write to yuslight.33@gmail.com to ask about a private session.)</span></p>
+          <span class="signup">Workshops run regularly across Asia. Upcoming dates are open now — see the <a href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">schedule →</a></span>
         </div>
       </div>
       <div class="card">
@@ -243,6 +269,15 @@ You really don’t need to know how to draw.<br>
         </div>
       </div>
     </div>
+    <div class="take">
+      <p class="tk">WHAT YOU TAKE HOME</p>
+      <p class="tsub">(more than how that one hour felt)</p>
+      <div class="grid">
+        <div class="it"><b>A breathing practice that's yours</b><span>For traffic, for the ten minutes before a meeting, for 2am.</span></div>
+        <div class="it"><b>A painting you made yourself</b><span>Put it on the wall and it keeps reminding you.</span></div>
+        <div class="it"><b>A clearer next step</b><span>Not the answer — a direction.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -257,10 +292,12 @@ You really don’t need to know how to draw.<br>
   <p class="tag">In Their Words</p>
   <div class="marquee">
     <div class="track">
+      <div class="tcard"><p>"S guides you so steadily and gently that you relax without noticing. Along the way, thoughts I'd been stuck on — ones that hadn't taken shape yet — came together. I saw my own blind spot, and found support for a perspective."</p><div class="who">— Product manager, Taipei</div></div>
       <div class="tcard"><p>"I always thought I wanted to be a powerhouse. But after painting, I realized my subconscious just wanted a comfortable home and a softer version of me — and I'm already living that now. Nothing to envy in anyone else."</p><div class="who">— Senior HR professional</div></div>
       <div class="tcard"><p>"Just checking in with feedback — S, you're amazing!"</p><div class="who">— Theta healer</div></div>
       <div class="tcard"><p>"I never imagined my husband and I together would be this colour — flowing mountains. And he really does love mountains."</p><div class="who">— Custom painting client</div></div>
       <div class="tcard"><p>"The workshop was so much fun! I'd done something similar in Australia before, but this one was even better."</p><div class="who">— Art student, Shanghai</div></div>
+      <div class="tcard" aria-hidden="true"><p>"S guides you so steadily and gently that you relax without noticing. Along the way, thoughts I'd been stuck on — ones that hadn't taken shape yet — came together. I saw my own blind spot, and found support for a perspective."</p><div class="who">— Product manager, Taipei</div></div>
       <div class="tcard" aria-hidden="true"><p>"I always thought I wanted to be a powerhouse. But after painting, I realized my subconscious just wanted a comfortable home and a softer version of me — and I'm already living that now. Nothing to envy in anyone else."</p><div class="who">— Senior HR professional</div></div>
       <div class="tcard" aria-hidden="true"><p>"Just checking in with feedback — S, you're amazing!"</p><div class="who">— Theta healer</div></div>
       <div class="tcard" aria-hidden="true"><p>"I never imagined my husband and I together would be this colour — flowing mountains. And he really does love mountains."</p><div class="who">— Custom painting client</div></div>
@@ -274,7 +311,7 @@ You really don’t need to know how to draw.<br>
     <h2>If you've read this far,<br>and something in you moved—</h2>
     <p class="l1">You don't need to have it figured out first. We can figure it out together.</p>
     <p class="l2">One mindful art session — that's all it takes to begin.</p>
-    <a class="big-btn" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener">Book · 1-on-1 Mindful Art Session</a>
+    <a class="big-btn" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener">Give yourself an hour · 1-on-1</a>
     <p class="mailrow">Collaborations, conversations, and shared inspiration — <a href="mailto:yuslight.33@gmail.com">write to me · yuslight.33@gmail.com</a></p>
   </div>
 </section>
