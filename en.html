@@ -45,6 +45,7 @@
     "alumniOf": "Taipei National University of the Arts"
   },
   "makesOffer": [
+    { "@type": "Offer", "priceCurrency": "TWD", "price": "680", "itemOffered": { "@type": "Service", "name": "Mindful Breathing (1-on-1, 30 minutes, online)" } },
     { "@type": "Offer", "priceCurrency": "TWD", "price": "1680", "itemOffered": { "@type": "Service", "name": "Mindful / Art Healing Session (1-on-1, 60 minutes)" } },
     { "@type": "Offer", "priceCurrency": "TWD", "price": "4800", "itemOffered": { "@type": "Service", "name": "One-month companion package (three 1-on-1 sessions)" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mindful Art Workshop (small group)" } },
@@ -153,6 +154,29 @@ header .wrap{width:100%;}
 .take .it b{display:block;font-weight:400;color:var(--gold2);font-size:1.06rem;line-height:1.65;letter-spacing:.03em;}
 .take .it span{display:block;color:rgba(246,243,236,.55);font-size:.9rem;line-height:1.8;margin-top:.5rem;}
 @media(max-width:720px){.rail{margin:2rem 0 .4rem;}.rlab{font-size:.68rem;letter-spacing:.04em;}.rlab i{font-size:.64rem;}.take .grid{grid-template-columns:1fr;gap:1.2rem;}.take{margin-top:2.6rem;padding-top:2rem;}}
+.fnbar{font-size:.7rem;letter-spacing:.22em;color:rgba(216,188,133,.75);margin:-1.35rem 0 1.9rem;}
+.card{background:rgba(246,243,236,.035);border:1px solid rgba(246,243,236,.09);border-radius:14px;margin-bottom:1.15rem;padding:clamp(1.7rem,2.8vw,2.3rem) clamp(1.3rem,2.4vw,2rem);}
+.card:hover{background:rgba(199,165,102,.055);border-color:rgba(199,165,102,.26);}
+.card.feat{border-color:rgba(199,165,102,.62);background:rgba(199,165,102,.065);padding:clamp(2.1rem,3.4vw,2.9rem) clamp(1.5rem,2.8vw,2.3rem);}
+.card.feat h3{font-size:1.42rem;}
+.card.feat .meta{font-size:1.02rem;}
+.badge{display:inline-block;font-size:.64rem;letter-spacing:.2em;color:var(--navy);background:var(--gold);padding:.32rem .95rem;border-radius:999px;margin-bottom:.95rem;}
+.meta{display:block;margin:.1rem 0 1rem;font-size:.95rem;letter-spacing:.05em;color:var(--gold);}
+.meta small{color:rgba(246,243,236,.45);letter-spacing:.04em;}
+.pack{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid rgba(246,243,236,.12);}
+.pack b{display:block;font-weight:400;color:var(--gold);font-size:.95rem;letter-spacing:.05em;margin-bottom:.4rem;}
+.cbtn{display:inline-block;margin-top:1.3rem;font-size:.78rem;letter-spacing:.16em;color:var(--gold);border:1px solid rgba(199,165,102,.5);padding:.62rem 1.6rem;border-radius:999px;transition:background .3s,transform .3s;}
+.cbtn:hover{background:rgba(199,165,102,.14);transform:translateY(-1px);}
+.cbtn.solid{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+.cbtn.solid:hover{background:var(--gold2);}
+.ses{margin-top:1.3rem;}
+.ses .row{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;padding:.85rem 0;border-top:1px solid rgba(246,243,236,.11);}
+.ses .d{font-size:.95rem;color:rgba(246,243,236,.82);}
+.ses .s{font-size:.72rem;letter-spacing:.1em;color:var(--gold2);border:1px solid rgba(216,188,133,.38);border-radius:999px;padding:.16rem .7rem;}
+.ses .row .cbtn{margin-top:0;margin-left:auto;padding:.5rem 1.3rem;font-size:.74rem;}
+.corp{margin-top:1.2rem;font-size:.9rem;color:rgba(246,243,236,.6);}
+.corp a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;}
+@media(max-width:720px){.fnbar{font-size:.63rem;letter-spacing:.12em;margin:-1rem 0 1.5rem;}.ses .row .cbtn{margin-left:0;}.card.feat h3{font-size:1.2rem;}}
 @keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
 @keyframes twinkle{0%,100%{opacity:.3;}50%{opacity:1;}}
 @keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -183,6 +207,7 @@ header .wrap{width:100%;}
   <div class="wrap">
     <div style="max-width:660px;position:relative;z-index:2;">
       <p class="eyebrow">YUS <i>· mindful & art</i></p>
+      <p class="fnbar">Mindful art therapy · 1-on-1 online sessions · Taipei / online</p>
       <h1>Mindful & Art —<br>letting life feel<br><span class="hl">lighter</span>.</h1>
       <p class="lead hand">Gently exploring what it means to be human, through beauty and art.<br>Not by pushing harder — by finding your way back to ease.</p>
       <p class="lead hand" style="margin-top:1rem;color:rgba(216,188,133,.92);border-left:1px solid rgba(199,165,102,.45);padding-left:1rem;">Lighter isn't the finish line.<br>It's having the energy to go where you actually want to go.</p>
@@ -224,50 +249,61 @@ header .wrap{width:100%;}
       <div class="rail" aria-hidden="true">
         <div class="rstep"><div class="rdot"></div><div class="rlab">New<i>notice it</i></div></div>
         <div class="rstep"><div class="rdot q"></div><div class="rlab">First quarter<i>make something</i></div></div>
-        <div class="rstep"><div class="rdot f"></div><div class="rlab">Full<i>keep it</i></div></div>
-        <div class="rstep"><div class="rdot d"></div><div class="rlab">Dark<i>begin again</i></div></div>
+        <div class="rstep"><div class="rdot f"></div><div class="rlab">Full<i>make it together</i></div></div>
+        <div class="rstep"><div class="rdot d"></div><div class="rlab">Dark<i>keep it</i></div></div>
       </div>
-    <div style="margin-top:2.6rem;">
+        <div style="margin-top:2.6rem;">
       <div class="card">
         <svg class="mphase" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#C7A566" stroke-width="1.3"/></svg>
         <div>
           <span class="phase">NEW MOON</span>
-          <h3>Mindful / Art Therapy Session</h3>
-          <p>One-on-one. It starts with a quiet conversation — or just a pen.<br>
-Mindful breathing, artistic awareness, and the parts of you that are easier to draw than to say out loud.<br>
-Bring something specific if you like — work, a relationship, the decision you have been stuck on for months.<br>
-Or bring nothing at all. Just come and play, breathe, and remember what it feels like to make something.<br>
-If you only want the quiet, you can book a mindful breathing session on its own.<br>
-You really don’t need to know how to draw.<br>
-<span class="soft">(No rushing — you leave with simple tools you can keep practising on your own.)</span></p>
-          <span class="price">Single session · NT$ 1,680 / 60 minutes</span>
-          <span class="price alt">One-month package · NT$ 4,800 (three 1-on-1 sessions)</span>
+          <h3>Mindful Breathing</h3>
+          <span class="meta">30 min · NT$ 680 <small>· online</small></span>
+          <p>We'll do an MBSR body scan — from the top of your head downward, inch by inch, back into your body. Then two or three breathing practices. Different ones for different moments: one for falling asleep, one for before a meeting, one for 3am when your mind won't stop.</p>
+          <p style="margin-top:.7rem;">You leave with the steps written down and a recording — breathing tools you can keep practising at home.</p>
+          <a class="cbtn" href="https://calendly.com/yuslight/1-on-1-mindfulness-30-m" target="_blank" rel="noopener">Book 30 minutes</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card feat">
         <svg class="mphase" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#C7A566" stroke-width="1.3"/><path d="M22 4 A18 18 0 0 1 22 40 Z" fill="#C7A566"/></svg>
         <div>
+          <span class="badge">WHERE MOST PEOPLE START</span>
           <span class="phase">FIRST QUARTER</span>
-          <h3>Mindful Art Workshop</h3>
-          <p>Small groups. Using brush and colour to put feelings on paper that words can't quite reach. <span class="soft">(No drawing skill required — how "good" it looks was never the point.)</span> Held regularly across Asia — past workshops in Shanghai, Taipei, and Bali — and available for private and corporate groups. <span class="soft">(Write to yuslight.33@gmail.com to ask about a private session.)</span></p>
-          <span class="signup">Workshops run regularly across Asia. Upcoming dates are open now — see the <a href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">schedule →</a></span>
+          <h3>Mindful / Art Therapy Session</h3>
+          <span class="meta">1-on-1 · 60 min · NT$ 1,680 <small>· online</small></span>
+          <p>Bring something specific if you like — work, a relationship, the decision you've been stuck on. Or bring nothing at all, and just practise breathing and remember what it feels like to make something.</p>
+          <p style="margin-top:.7rem;">Breathing first, then talking or drawing, then we look at what came out together. <span class="soft">You really don't need to know how to draw. How good it looks was never the point.</span></p>
+          <div class="pack">
+            <b>One-month companion · three sessions · NT$ 4,800</b>
+            <p>For walking a stretch of road, not solving one question. Made for people in the middle of a big decision.</p>
+          </div>
+          <a class="cbtn solid" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener">Book a 1-on-1</a>
         </div>
       </div>
       <div class="card">
         <svg class="mphase" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="#C7A566"/></svg>
         <div>
           <span class="phase">FULL MOON</span>
-          <h3>Custom Painting</h3>
-          <p>A piece made just for you — for your space, your story. I translate what you share into colour, as a kind of blessing, to fill your everyday space with more of it. It begins with one conversation, and slowly grows into something you get to see every day. *Currently only available after a one-on-one session, so your painting can be shaped around your own story.</p>
-          <span class="price">Price · quoted after a session</span>
+          <h3>Mindful Art Workshop</h3>
+          <span class="meta">Small group <small>· in person · priced per session</small></span>
+          <p>Brush and colour, putting feelings on paper that words can't quite reach. <span class="soft">No drawing skill required.</span></p>
+          <p style="margin-top:.7rem;">Held in Shanghai, Taipei and Bali — private and corporate groups welcome.</p>
+          <div class="ses">
+            <div class="row"><span class="d">Oct 10 (Sat) · Kuala Lumpur, afternoon</span><span class="s">3 spots left</span><a class="cbtn solid" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">Register</a></div>
+            <div class="row"><span class="d">January · Kuala Lumpur</span><span class="s">In planning</span><a class="cbtn" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">Notify me</a></div>
+          </div>
+          <p class="corp">Corporate workshops → <a href="mailto:yuslight.33@gmail.com">yuslight.33@gmail.com</a></p>
         </div>
       </div>
       <div class="card">
         <svg class="mphase" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#C7A566" stroke-width="1.3" stroke-dasharray="3 4"/></svg>
         <div>
           <span class="phase">DARK MOON</span>
-          <h3>Objects of Beauty</h3>
-          <p>In the making. <span class="soft">(Some things aren't meant to be rushed — so we're letting this one take its time.)</span></p>
+          <h3>Custom Painting</h3>
+          <span class="meta">Quoted after a session</span>
+          <p>A piece made for your space and your story. It begins with one conversation, and slowly grows into something you get to see every day.</p>
+          <p style="margin-top:.7rem;">I need to hear your story before I can paint your colours — so it starts with a 1-on-1.</p>
+          <a class="cbtn" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener">Start with a 1-on-1</a>
         </div>
       </div>
     </div>
@@ -296,14 +332,18 @@ You really don’t need to know how to draw.<br>
     <div class="track">
       <div class="tcard"><p>"S guides you so steadily and gently that you relax without noticing. Along the way, thoughts I'd been stuck on — ones that hadn't taken shape yet — came together. I saw my own blind spot, and found support for a perspective."</p><div class="who">— Product manager, Taipei</div></div>
       <div class="tcard"><p>"I always thought I wanted to be a powerhouse. But after painting, I realized my subconscious just wanted a comfortable home and a softer version of me — and I'm already living that now. Nothing to envy in anyone else."</p><div class="who">— Senior HR professional</div></div>
-      <div class="tcard"><p>"Just checking in with feedback — S, you're amazing!"</p><div class="who">— Theta healer</div></div>
+      <div class="tcard"><p>"S, you're amazing — the things we explored together actually started showing up in real life afterwards."</p><div class="who">— Theta healer</div></div>
       <div class="tcard"><p>"I never imagined my husband and I together would be this colour — flowing mountains. And he really does love mountains."</p><div class="who">— Custom painting client</div></div>
       <div class="tcard"><p>"The workshop was so much fun! I'd done something similar in Australia before, but this one was even better."</p><div class="who">— Art student, Shanghai</div></div>
+      <div class="tcard"><p>"During the meditation my body felt warm — actually hot. Afterwards it felt lighter."</p><div class="who">— Product manager, Kuala Lumpur</div></div>
+      <div class="tcard"><p>"The workshop was so much fun. Beyond the self-exploration, I met a lot of interesting new people."</p><div class="who">— Content creator</div></div>
       <div class="tcard" aria-hidden="true"><p>"S guides you so steadily and gently that you relax without noticing. Along the way, thoughts I'd been stuck on — ones that hadn't taken shape yet — came together. I saw my own blind spot, and found support for a perspective."</p><div class="who">— Product manager, Taipei</div></div>
       <div class="tcard" aria-hidden="true"><p>"I always thought I wanted to be a powerhouse. But after painting, I realized my subconscious just wanted a comfortable home and a softer version of me — and I'm already living that now. Nothing to envy in anyone else."</p><div class="who">— Senior HR professional</div></div>
-      <div class="tcard" aria-hidden="true"><p>"Just checking in with feedback — S, you're amazing!"</p><div class="who">— Theta healer</div></div>
+      <div class="tcard" aria-hidden="true"><p>"S, you're amazing — the things we explored together actually started showing up in real life afterwards."</p><div class="who">— Theta healer</div></div>
       <div class="tcard" aria-hidden="true"><p>"I never imagined my husband and I together would be this colour — flowing mountains. And he really does love mountains."</p><div class="who">— Custom painting client</div></div>
       <div class="tcard" aria-hidden="true"><p>"The workshop was so much fun! I'd done something similar in Australia before, but this one was even better."</p><div class="who">— Art student, Shanghai</div></div>
+      <div class="tcard" aria-hidden="true"><p>"During the meditation my body felt warm — actually hot. Afterwards it felt lighter."</p><div class="who">— Product manager, Kuala Lumpur</div></div>
+      <div class="tcard" aria-hidden="true"><p>"The workshop was so much fun. Beyond the self-exploration, I met a lot of interesting new people."</p><div class="who">— Content creator</div></div>
     </div>
   </div>
 </section>
