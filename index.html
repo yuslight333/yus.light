@@ -155,9 +155,7 @@ header .wrap{width:100%;}
 .take .it span{display:block;color:rgba(246,243,236,.55);font-size:.9rem;line-height:1.8;margin-top:.5rem;}
 @media(max-width:720px){.rail{margin:2rem 0 .4rem;}.rlab{font-size:.68rem;letter-spacing:.04em;}.rlab i{font-size:.64rem;}.take .grid{grid-template-columns:1fr;gap:1.2rem;}.take{margin-top:2.6rem;padding-top:2rem;}}
 .fnbar{font-size:.7rem;letter-spacing:.22em;color:rgba(216,188,133,.75);margin:-1.35rem 0 1.9rem;}
-.card{background:rgba(246,243,236,.035);border:1px solid rgba(246,243,236,.09);border-radius:14px;margin-bottom:1.15rem;padding:clamp(1.7rem,2.8vw,2.3rem) clamp(1.3rem,2.4vw,2rem);}
-.card:hover{background:rgba(199,165,102,.055);border-color:rgba(199,165,102,.26);}
-.card.feat{border-color:rgba(199,165,102,.62);background:rgba(199,165,102,.065);padding:clamp(2.1rem,3.4vw,2.9rem) clamp(1.5rem,2.8vw,2.3rem);}
+.card.feat{padding-top:clamp(2.4rem,4vw,3.4rem);padding-bottom:clamp(2.4rem,4vw,3.4rem);border-top-color:rgba(199,165,102,.45);}
 .card.feat h3{font-size:1.42rem;}
 .card.feat .meta{font-size:1.02rem;}
 .badge{display:inline-block;font-size:.64rem;letter-spacing:.2em;color:var(--navy);background:var(--gold);padding:.32rem .95rem;border-radius:999px;margin-bottom:.95rem;}
@@ -177,6 +175,13 @@ header .wrap{width:100%;}
 .corp{margin-top:1.2rem;font-size:.9rem;color:rgba(246,243,236,.6);}
 .corp a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;}
 @media(max-width:720px){.fnbar{font-size:.63rem;letter-spacing:.12em;margin:-1rem 0 1.5rem;}.ses .row .cbtn{margin-left:0;}.card.feat h3{font-size:1.2rem;}}
+.maybe{padding:clamp(4.5rem,8vw,7.5rem) 0;}
+.maybe h2{letter-spacing:.08em;}
+.mlist{list-style:none;margin-top:2.8rem;max-width:780px;}
+.mlist li{position:relative;padding:1.25rem 0 1.25rem 2rem;border-top:1px solid rgba(246,243,236,.1);font-size:clamp(1rem,1.35vw,1.1rem);line-height:1.95;color:rgba(246,243,236,.76);letter-spacing:.03em;}
+.mlist li:last-child{border-bottom:1px solid rgba(246,243,236,.1);}
+.mlist li::before{content:"";position:absolute;left:0;top:2.05rem;width:7px;height:7px;border-radius:50%;border:1px solid rgba(199,165,102,.75);}
+@media(max-width:720px){.mlist li{padding-left:1.5rem;font-size:.97rem;line-height:1.9;}.mlist li::before{top:1.85rem;width:6px;height:6px;}}
 @keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
 @keyframes twinkle{0%,100%{opacity:.3;}50%{opacity:1;}}
 @keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -218,6 +223,19 @@ header .wrap{width:100%;}
     </div>
   </div>
 </header>
+
+<section class="maybe" aria-label="你是不是也">
+  <div class="wrap">
+    <h2>你是不是也——</h2>
+    <ul class="mlist">
+      <li>那件想做很久的事，你每年都提起一次，也每年都說「明年吧」。</li>
+      <li>被問「你到底想要什麼」，你答得出職稱，答不出感覺。</li>
+      <li>有個決定卡了很久，你查了很多資料、問了很多人，就是還沒問過自己。</li>
+      <li>難得空出一個下午，你卻打開待辦清單——好像不做點什麼，就不配休息。</li>
+      <li>你什麼都做得到，只是每一次，都要用掉全部的力氣。</li>
+    </ul>
+  </div>
+</section>
 
 <section id="about" class="about">
   <div class="wrap">
@@ -289,7 +307,7 @@ header .wrap{width:100%;}
           <p>用畫筆和顏色，把說不出來的感覺放到紙上。<span class="soft">不需要會畫畫。</span></p>
           <p style="margin-top:.7rem;">曾於上海、台北、峇里島舉辦，也接受企業客製化。</p>
           <div class="ses">
-            <div class="row"><span class="d">10/10（六）吉隆坡 · 下午場</span><span class="s">剩 3 位</span><a class="cbtn solid" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">報名</a></div>
+            <div class="row"><span class="d">10/10（六）吉隆坡 · 下午場</span><span class="s">名額有限</span><a class="cbtn solid" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">報名</a></div>
             <div class="row"><span class="d">1 月 · 吉隆坡</span><span class="s">籌備中</span><a class="cbtn" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">開課通知我</a></div>
           </div>
           <p class="corp">企業工作坊洽詢 → <a href="mailto:yuslight.33@gmail.com">yuslight.33@gmail.com</a></p>
@@ -332,18 +350,18 @@ header .wrap{width:100%;}
     <div class="track">
       <div class="tcard"><p>「透過 S 很平穩且柔和的引導，逐漸在過程中放鬆，也進而將自己之前受困但尚未成形的想法聚合，發現自己的盲點與獲得觀點的支持。」</p><div class="who">— 台北・產品經理</div></div>
       <div class="tcard"><p>「我一直以為我想當女強人，但畫圖後我發現，潛意識想要的是舒服的家、溫柔狀態的我——而我現在已經是這樣了，根本不用羨慕別人。」</p><div class="who">— 資深 HR</div></div>
-      <div class="tcard"><p>「S 你好厲害，我們一起探索的內容之後確實在真實生活中發生了。」</p><div class="who">— 西塔療癒師</div></div>
+      <div class="tcard"><p>「S 你好厲害，我們一起探索的內容之後確實在真實生活中發生了。」</p><div class="who">— 上海・西塔療癒師</div></div>
       <div class="tcard"><p>「我沒想過我跟老公合起來是這個顏色，流動的山，他本人真的很喜歡山。」</p><div class="who">— 訂製畫客戶</div></div>
       <div class="tcard"><p>「工作坊好有趣！我之前在澳洲參加過類似的，但這個更好玩。」</p><div class="who">— 上海・藝術系學生</div></div>
       <div class="tcard"><p>「我感覺冥想的時候身體很溫暖、熱熱的，結束後身體變得比較輕盈。」</p><div class="who">— 吉隆坡・產品經理</div></div>
-      <div class="tcard"><p>「工作坊很好玩，除了自我探索外，還認識很多有趣的新朋友。」</p><div class="who">— 內容創作者</div></div>
+      <div class="tcard"><p>「工作坊很好玩，除了自我探索外，還認識很多有趣的新朋友。」</p><div class="who">— 上海・內容創作者</div></div>
       <div class="tcard" aria-hidden="true"><p>「透過 S 很平穩且柔和的引導，逐漸在過程中放鬆，也進而將自己之前受困但尚未成形的想法聚合，發現自己的盲點與獲得觀點的支持。」</p><div class="who">— 台北・產品經理</div></div>
       <div class="tcard" aria-hidden="true"><p>「我一直以為我想當女強人，但畫圖後我發現，潛意識想要的是舒服的家、溫柔狀態的我——而我現在已經是這樣了，根本不用羨慕別人。」</p><div class="who">— 資深 HR</div></div>
-      <div class="tcard" aria-hidden="true"><p>「S 你好厲害，我們一起探索的內容之後確實在真實生活中發生了。」</p><div class="who">— 西塔療癒師</div></div>
+      <div class="tcard" aria-hidden="true"><p>「S 你好厲害，我們一起探索的內容之後確實在真實生活中發生了。」</p><div class="who">— 上海・西塔療癒師</div></div>
       <div class="tcard" aria-hidden="true"><p>「我沒想過我跟老公合起來是這個顏色，流動的山，他本人真的很喜歡山。」</p><div class="who">— 訂製畫客戶</div></div>
       <div class="tcard" aria-hidden="true"><p>「工作坊好有趣！我之前在澳洲參加過類似的，但這個更好玩。」</p><div class="who">— 上海・藝術系學生</div></div>
       <div class="tcard" aria-hidden="true"><p>「我感覺冥想的時候身體很溫暖、熱熱的，結束後身體變得比較輕盈。」</p><div class="who">— 吉隆坡・產品經理</div></div>
-      <div class="tcard" aria-hidden="true"><p>「工作坊很好玩，除了自我探索外，還認識很多有趣的新朋友。」</p><div class="who">— 內容創作者</div></div>
+      <div class="tcard" aria-hidden="true"><p>「工作坊很好玩，除了自我探索外，還認識很多有趣的新朋友。」</p><div class="who">— 上海・內容創作者</div></div>
     </div>
   </div>
 </section>

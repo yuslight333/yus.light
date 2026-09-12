@@ -155,9 +155,7 @@ header .wrap{width:100%;}
 .take .it span{display:block;color:rgba(246,243,236,.55);font-size:.9rem;line-height:1.8;margin-top:.5rem;}
 @media(max-width:720px){.rail{margin:2rem 0 .4rem;}.rlab{font-size:.68rem;letter-spacing:.04em;}.rlab i{font-size:.64rem;}.take .grid{grid-template-columns:1fr;gap:1.2rem;}.take{margin-top:2.6rem;padding-top:2rem;}}
 .fnbar{font-size:.7rem;letter-spacing:.22em;color:rgba(216,188,133,.75);margin:-1.35rem 0 1.9rem;}
-.card{background:rgba(246,243,236,.035);border:1px solid rgba(246,243,236,.09);border-radius:14px;margin-bottom:1.15rem;padding:clamp(1.7rem,2.8vw,2.3rem) clamp(1.3rem,2.4vw,2rem);}
-.card:hover{background:rgba(199,165,102,.055);border-color:rgba(199,165,102,.26);}
-.card.feat{border-color:rgba(199,165,102,.62);background:rgba(199,165,102,.065);padding:clamp(2.1rem,3.4vw,2.9rem) clamp(1.5rem,2.8vw,2.3rem);}
+.card.feat{padding-top:clamp(2.4rem,4vw,3.4rem);padding-bottom:clamp(2.4rem,4vw,3.4rem);border-top-color:rgba(199,165,102,.45);}
 .card.feat h3{font-size:1.42rem;}
 .card.feat .meta{font-size:1.02rem;}
 .badge{display:inline-block;font-size:.64rem;letter-spacing:.2em;color:var(--navy);background:var(--gold);padding:.32rem .95rem;border-radius:999px;margin-bottom:.95rem;}
@@ -177,6 +175,13 @@ header .wrap{width:100%;}
 .corp{margin-top:1.2rem;font-size:.9rem;color:rgba(246,243,236,.6);}
 .corp a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;}
 @media(max-width:720px){.fnbar{font-size:.63rem;letter-spacing:.12em;margin:-1rem 0 1.5rem;}.ses .row .cbtn{margin-left:0;}.card.feat h3{font-size:1.2rem;}}
+.maybe{padding:clamp(4.5rem,8vw,7.5rem) 0;}
+.maybe h2{letter-spacing:.08em;}
+.mlist{list-style:none;margin-top:2.8rem;max-width:780px;}
+.mlist li{position:relative;padding:1.25rem 0 1.25rem 2rem;border-top:1px solid rgba(246,243,236,.1);font-size:clamp(1rem,1.35vw,1.1rem);line-height:1.95;color:rgba(246,243,236,.76);letter-spacing:.03em;}
+.mlist li:last-child{border-bottom:1px solid rgba(246,243,236,.1);}
+.mlist li::before{content:"";position:absolute;left:0;top:2.05rem;width:7px;height:7px;border-radius:50%;border:1px solid rgba(199,165,102,.75);}
+@media(max-width:720px){.mlist li{padding-left:1.5rem;font-size:.97rem;line-height:1.9;}.mlist li::before{top:1.85rem;width:6px;height:6px;}}
 @keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
 @keyframes twinkle{0%,100%{opacity:.3;}50%{opacity:1;}}
 @keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -218,6 +223,19 @@ header .wrap{width:100%;}
     </div>
   </div>
 </header>
+
+<section class="maybe" aria-label="Does any of this sound like you">
+  <div class="wrap">
+    <h2>Does any of this sound like you—</h2>
+    <ul class="mlist">
+      <li>That thing you've wanted to do for years. You bring it up once a year, and once a year you say "maybe next year".</li>
+      <li>Someone asks what you actually want. You can name a job title. You can't name a feeling.</li>
+      <li>There's a decision you've been sitting on. You've read everything and asked everyone — except yourself.</li>
+      <li>You finally get an afternoon free, and you open your to-do list. As if you haven't earned the rest.</li>
+      <li>You can do all of it. It just costs you everything you have, every single time.</li>
+    </ul>
+  </div>
+</section>
 
 <section id="about" class="about">
   <div class="wrap">
@@ -289,7 +307,7 @@ header .wrap{width:100%;}
           <p>Brush and colour, putting feelings on paper that words can't quite reach. <span class="soft">No drawing skill required.</span></p>
           <p style="margin-top:.7rem;">Held in Shanghai, Taipei and Bali — private and corporate groups welcome.</p>
           <div class="ses">
-            <div class="row"><span class="d">Oct 10 (Sat) · Kuala Lumpur, afternoon</span><span class="s">3 spots left</span><a class="cbtn solid" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">Register</a></div>
+            <div class="row"><span class="d">Oct 10 (Sat) · Kuala Lumpur, afternoon</span><span class="s">Limited spots</span><a class="cbtn solid" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">Register</a></div>
             <div class="row"><span class="d">January · Kuala Lumpur</span><span class="s">In planning</span><a class="cbtn" href="https://forms.gle/AAHcjCdpex5TUq4y5" target="_blank" rel="noopener">Notify me</a></div>
           </div>
           <p class="corp">Corporate workshops → <a href="mailto:yuslight.33@gmail.com">yuslight.33@gmail.com</a></p>
@@ -332,18 +350,18 @@ header .wrap{width:100%;}
     <div class="track">
       <div class="tcard"><p>"S guides you so steadily and gently that you relax without noticing. Along the way, thoughts I'd been stuck on — ones that hadn't taken shape yet — came together. I saw my own blind spot, and found support for a perspective."</p><div class="who">— Product manager, Taipei</div></div>
       <div class="tcard"><p>"I always thought I wanted to be a powerhouse. But after painting, I realized my subconscious just wanted a comfortable home and a softer version of me — and I'm already living that now. Nothing to envy in anyone else."</p><div class="who">— Senior HR professional</div></div>
-      <div class="tcard"><p>"S, you're amazing — the things we explored together actually started showing up in real life afterwards."</p><div class="who">— Theta healer</div></div>
+      <div class="tcard"><p>"S, you're amazing — the things we explored together actually started showing up in real life afterwards."</p><div class="who">— Theta healer, Shanghai</div></div>
       <div class="tcard"><p>"I never imagined my husband and I together would be this colour — flowing mountains. And he really does love mountains."</p><div class="who">— Custom painting client</div></div>
       <div class="tcard"><p>"The workshop was so much fun! I'd done something similar in Australia before, but this one was even better."</p><div class="who">— Art student, Shanghai</div></div>
       <div class="tcard"><p>"During the meditation my body felt warm — actually hot. Afterwards it felt lighter."</p><div class="who">— Product manager, Kuala Lumpur</div></div>
-      <div class="tcard"><p>"The workshop was so much fun. Beyond the self-exploration, I met a lot of interesting new people."</p><div class="who">— Content creator</div></div>
+      <div class="tcard"><p>"The workshop was so much fun. Beyond the self-exploration, I met a lot of interesting new people."</p><div class="who">— Content creator, Shanghai</div></div>
       <div class="tcard" aria-hidden="true"><p>"S guides you so steadily and gently that you relax without noticing. Along the way, thoughts I'd been stuck on — ones that hadn't taken shape yet — came together. I saw my own blind spot, and found support for a perspective."</p><div class="who">— Product manager, Taipei</div></div>
       <div class="tcard" aria-hidden="true"><p>"I always thought I wanted to be a powerhouse. But after painting, I realized my subconscious just wanted a comfortable home and a softer version of me — and I'm already living that now. Nothing to envy in anyone else."</p><div class="who">— Senior HR professional</div></div>
-      <div class="tcard" aria-hidden="true"><p>"S, you're amazing — the things we explored together actually started showing up in real life afterwards."</p><div class="who">— Theta healer</div></div>
+      <div class="tcard" aria-hidden="true"><p>"S, you're amazing — the things we explored together actually started showing up in real life afterwards."</p><div class="who">— Theta healer, Shanghai</div></div>
       <div class="tcard" aria-hidden="true"><p>"I never imagined my husband and I together would be this colour — flowing mountains. And he really does love mountains."</p><div class="who">— Custom painting client</div></div>
       <div class="tcard" aria-hidden="true"><p>"The workshop was so much fun! I'd done something similar in Australia before, but this one was even better."</p><div class="who">— Art student, Shanghai</div></div>
       <div class="tcard" aria-hidden="true"><p>"During the meditation my body felt warm — actually hot. Afterwards it felt lighter."</p><div class="who">— Product manager, Kuala Lumpur</div></div>
-      <div class="tcard" aria-hidden="true"><p>"The workshop was so much fun. Beyond the self-exploration, I met a lot of interesting new people."</p><div class="who">— Content creator</div></div>
+      <div class="tcard" aria-hidden="true"><p>"The workshop was so much fun. Beyond the self-exploration, I met a lot of interesting new people."</p><div class="who">— Content creator, Shanghai</div></div>
     </div>
   </div>
 </section>
