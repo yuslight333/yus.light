@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yuslight333.github.io/yus.light/sitemap.xml
+Sitemap: https://yuslight.com/sitemap.xml
