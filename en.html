@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://yuslight.com/og-cover.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=EB+Garamond:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,9 +41,9 @@
   "areaServed": "Asia",
   "founder": { "@type": "Person", "name": "S", "jobTitle": "Mindfulness Trainer and Art Facilitator", "alumniOf": "臺北藝術大學" },
   "makesOffer": [
-    { "@type": "Offer", "priceCurrency": "TWD", "price": "1680", "itemOffered": { "@type": "Service", "name": "Mindful Art Session, One-on-One (60 minutes)" } },
+    { "@type": "Offer", "priceCurrency": "USD", "price": "56", "itemOffered": { "@type": "Service", "name": "Mindful Art Session, One-on-One (60 minutes)" } },
     { "@type": "Offer", "priceCurrency": "TWD", "price": "680", "itemOffered": { "@type": "Service", "name": "Mindful Breathing Session (30 minutes, first time only)" } },
-    { "@type": "Offer", "priceCurrency": "TWD", "price": "4800", "itemOffered": { "@type": "Service", "name": "One-Month Companionship (three sessions)" } },
+    { "@type": "Offer", "priceCurrency": "USD", "price": "165", "itemOffered": { "@type": "Service", "name": "One-Month Companionship (three sessions)" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mindful Art Workshop (small group)" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commissioned Painting" } }
   ]
@@ -459,6 +459,41 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
   .process .step p { font-size: clamp(13px, 1.02vw, 15px); max-width: none; text-wrap: balance; }
 }
 
+
+/* ===== 關於 YUS：文案層級 ===== */
+.about-story p.about-lede { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.9;
+  color: var(--text); letter-spacing: .03em; margin-bottom: 20px; }
+.about-story p + p { margin-top: 18px; }
+
+/* ===== 英文版字體 ===== */
+:root {
+  --serif: "EB Garamond", "Noto Serif TC", Georgia, "Times New Roman", serif;
+  --display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+}
+body { font-size: 18px; letter-spacing: .005em; }
+h1, h2, h3, h4, .service-title, .logo, .index-title, .artwork-note, .belief h2, .contact h2 {
+  font-family: var(--display); font-weight: 500;
+}
+h1 { font-size: clamp(40px, 4.6vw, 60px); letter-spacing: .02em; }
+h2, .service-title { font-size: clamp(31px, 3.2vw, 44px); letter-spacing: .015em; }
+h3 { font-size: 27px; letter-spacing: .015em; }
+.logo { font-size: 26px; letter-spacing: .38em; }
+.index-title { font-size: 21px; }
+.eyebrow { font-size: 12.5px; letter-spacing: .22em; text-transform: uppercase; }
+.hero-service { font-size: 13px; letter-spacing: .24em; }
+.hero-description { font-size: 18px; }
+.step-number, .index-phase, .artwork-grid figcaption span { font-family: var(--display); }
+blockquote p { font-size: 18px; }
+.button { font-size: 15px; letter-spacing: .1em; }
+.nav nav a { font-size: 15px; letter-spacing: .1em; }
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  h1 { font-size: clamp(30px, 7.4vw, 44px); }
+  h2, .service-title { font-size: 29px; }
+  h3 { font-size: 25px; }
+  .hero-description { font-size: 17px; }
+}
+
   </style>
 </head>
 <body>
@@ -531,12 +566,12 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
         <div class="experience-grid">
           <div>
             <h3 id="experience-title" class="service-title">Mindful Art Session<br>One-on-One</h3>
-            <p class="gold service-meta">60 minutes · NT$ 1,680 · In person / Online</p>
+            <p class="gold service-meta">60 minutes · USD 56 · In person / Online</p>
             <p class="experience-lede">Bring something if you have it. Or bring nothing at all.</p>
             <p class="experience-body">Work, a relationship, the decision you’ve been circling for months. Any of it can be the starting point. With nothing in mind, we simply practise breathing and remember what it feels like to make something.</p>
             <p class="soft-note">No drawing skill required, and no need to explain yourself first.<br>How “good” it looks has never been the point.</p>
             <a class="button button-outline" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book 60 minutes</a>
-            <div class="continuity"><span class="gold">One-month companionship · three sessions · NT$ 4,800</span><p>Walking a stretch of road together, not just solving one question. For anyone in the middle of a big decision.</p></div>
+            <div class="continuity"><span class="gold">One-month companionship · three sessions · USD 165</span><p>Walking a stretch of road together, not just solving one question. For anyone in the middle of a big decision.</p></div>
           </div>
           <figure class="experience-photo"><img src="yus-oneonone.webp" width="1000" height="1000" alt="A brush laying gold paint across a deep navy and cream canvas" loading="lazy"><figcaption>From breath, to colour, and back to yourself.</figcaption></figure>
         </div>
@@ -585,8 +620,8 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
         <h2 id="about-title" class="about-heading">Beauty isn’t decoration &mdash;<br>it’s <span class="gold">a tool you can use every day.</span></h2>
         <div class="about-grid">
           <figure class="about-image"><img src="yus-about2.webp" width="1100" height="1100" alt="YUS key visual: ART + COACHING = REAL TRANSFORMATION" loading="lazy"></figure>
-          <div class="about-story"><p>I spent ten years in commercial marketing helping brands find their voice, and far longer learning to listen to my own. What brought me back was never a harder push. It was small things: a stroke of colour, an honest conversation, a beautiful sheet of paper.</p><p>That’s how YUS began: turning art and awareness into tools you can reach for in everyday life. I’m not trying to make you a better person. I just want to help you remember you’re already enough.</p>
-            <aside class="founder"><p class="gold aside-label">Founder · S</p><p>A graduate of Taipei National University of the Arts, with over a decade in brand marketing and mindfulness practice, certified as a mindfulness trainer in 2019.</p><p>Now working across brand consulting, mindful breathing and art facilitation, bringing the most rational mind to the most emotional conversations.</p></aside>
+          <div class="about-story"><p class="about-lede">I know how to get things done well. It took me much longer to learn how not to lose myself along the way.</p><p>I spent ten years in commercial marketing, helping brands find their own voice. For a long stretch of that, I was in the habit of finding an answer for everything. What actually brought me back was rarely a harder push. It was a stroke of colour, a conversation in no hurry to reach a conclusion, a sheet of paper that made me want to stop.</p><p>That’s how YUS began: putting mindfulness, art and awareness back into everyday life, and making a space where people who are used to carrying things, making the decisions and looking after everyone else don’t have to hold it all together for a while.</p>
+            <aside class="founder"><p class="gold aside-label">Founder · S</p><p>A graduate of Taipei National University of the Arts, with over a decade in brand strategy and commercial marketing; certified as a mindfulness trainer in 2019.</p><p>Now working in brand consulting, mindful breathing and one-on-one mindful art sessions, helping the people I meet find a clearer life with more room in it. Bringing the most rational mind to the most emotional conversations.</p></aside>
           </div>
         </div>
       </div>
@@ -615,7 +650,7 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
 
     <section class="belief" aria-labelledby="belief-title"><div class="wrap"><p class="eyebrow belief-label">A LIGHTER WAY TO LIVE</p><h2 id="belief-title">Success doesn’t have to cost you<br class="audience-break"><span class="gold">everything you have</span>.</h2><p class="belief-copy">Less pulling inside, more room to choose.<br>Beauty, to make life lighter.</p><p class="belief-signature">YUS · you are already ready</p></div></section>
 
-    <section class="contact section" id="contact" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">YUS · YOU ARE ALREADY READY</p><h2 id="contact-title">If you’ve read this far<br>and something moved.</h2><p>You don’t have to have it figured out. Come, and we’ll work it out together.</p><p class="contact-format">Mindful Art Session · One-on-One · 60 minutes · NT$ 1,680</p><a class="button button-gold" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book a 1-on-1</a><p class="contact-email">For collaborations, conversations and ideas<br><a href="mailto:hello@yuslight.com">hello@yuslight.com</a></p></div></section>
+    <section class="contact section" id="contact" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">YUS · YOU ARE ALREADY READY</p><h2 id="contact-title">If you’ve read this far<br>and something moved.</h2><p>You don’t have to have it figured out. Come, and we’ll work it out together.</p><p class="contact-format">Mindful Art Session · One-on-One · 60 minutes · USD 56</p><a class="button button-gold" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book a 1-on-1</a><p class="contact-email">For collaborations, conversations and ideas<br><a href="mailto:hello@yuslight.com">hello@yuslight.com</a></p></div></section>
   </main>
   <footer><div class="wrap"><p>you are already ready</p><p>© 2026 YUS · Beauty, to make life lighter</p></div></footer>
   <script>
