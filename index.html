@@ -422,6 +422,43 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
   .moon { animation: moon-breathe 9s ease-in-out infinite, moon-float 15s ease-in-out infinite; }
 }
 
+
+/* ===== 一對一：文案層級 ===== */
+.experience-grid p.experience-lede { font-size: clamp(18px, 1.55vw, 22px); line-height: 1.85;
+  color: var(--text); letter-spacing: .03em; margin-top: 4px; }
+.experience-grid p.experience-body { font-size: 16px; line-height: 1.95; margin-top: 16px; }
+.experience-grid .soft-note { margin-top: 24px; }
+.continuity { border-top: 0; border-left: 1px solid rgba(196,171,115,.34);
+  padding: 3px 0 3px 20px; margin-top: 36px; }
+
+/* ===== 服務流程：加箭頭 ===== */
+.process-intro { margin-top: 54px; padding-top: 34px; border-top: 1px solid var(--line);
+  font-size: 15px; color: var(--muted); letter-spacing: .04em; }
+.process { margin-top: 24px; padding-top: 0; border-top: 0;
+  grid-template-columns: 1fr auto 1fr auto 1fr; gap: 24px; align-items: start; }
+.process .step { min-width: 0; }
+.step-arrow { align-self: start; margin-top: 31px; position: relative; width: 44px; height: 1px;
+  background: linear-gradient(90deg, rgba(196,171,115,.08), rgba(196,171,115,.55)); }
+.step-arrow::after { content: ""; position: absolute; right: 0; top: -3.5px; width: 7px; height: 7px;
+  border-top: 1px solid rgba(196,171,115,.7); border-right: 1px solid rgba(196,171,115,.7);
+  transform: rotate(45deg); }
+
+@media (max-width: 1079px) {
+  .process { grid-template-columns: 1fr; gap: 0; }
+  .process .step { display: grid; grid-template-columns: 32px 1fr; column-gap: 14px; }
+  .process .step .step-number { grid-row: span 2; margin-top: 4px; }
+  .process .step h4 { margin: 0 0 5px; }
+  .process .step p { grid-column: 2; max-width: none; }
+  .step-arrow { width: 1px; height: 26px; margin: 12px 0 12px 15px;
+    background: linear-gradient(180deg, rgba(196,171,115,.5), rgba(196,171,115,.06)); }
+  .step-arrow::after { right: auto; left: -3px; top: auto; bottom: 0; transform: rotate(135deg); }
+  .process-intro { margin-top: 42px; padding-top: 28px; }
+}
+
+@media (min-width: 1080px) {
+  .process .step p { white-space: nowrap; font-size: clamp(12.5px, 1.04vw, 15px); max-width: none; }
+}
+
   </style>
 </head>
 <body>
@@ -495,18 +532,21 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
           <div>
             <h3 id="experience-title" class="service-title">正念藝術療癒<br>一對一探索</h3>
             <p class="gold service-meta">60 分鐘 · NT$ 1,680 · 實體／線上</p>
-            <p>帶著題目來可以。工作、關係、卡了很久的那個決定，都可以談。沒有題目也可以，就是來練習呼吸，重新體驗久違的創作樂趣。</p>
-            <p>前段呼吸，中段對話或動筆，最後一起看你畫出來的東西。</p>
+            <p class="experience-lede">帶著題目來可以，沒有題目也可以。</p>
+            <p class="experience-body">工作、關係、卡了很久的那個決定，都可以談。沒有題目的話，就是來練習呼吸，重新體驗久違的創作樂趣。</p>
             <p class="soft-note">不需要會畫畫，也不必先把感受說清楚。<br>畫得好不好，在這裡從來不重要。</p>
             <a class="button button-outline" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">預約 60 分鐘</a>
             <div class="continuity"><span class="gold">一個月探索陪伴 · 三次 · NT$ 4,800</span><p>走一段路，不只解一個題。適合正在做某個大決定的人。</p></div>
           </div>
           <figure class="experience-photo"><img src="yus-oneonone.webp" width="1000" height="1000" alt="畫筆將金色顏料落在深藍與米白的畫布上" loading="lazy"><figcaption>從呼吸，到顏色，再回到自己。</figcaption></figure>
         </div>
+        <p class="process-intro">前段呼吸，中段對話或動筆，最後一起看你畫出來的東西。</p>
         <div class="process" aria-label="一對一體驗流程">
-          <div><span class="step-number">01</span><h4>呼吸，回到當下</h4><p>從身體覺察開始，留意此刻的感受。</p></div>
-          <div><span class="step-number">02</span><h4>對話，或自由創作</h4><p>讓還沒說清楚的想法，慢慢浮現。</p></div>
-          <div><span class="step-number">03</span><h4>回看自己的發現</h4><p>一起整理這段時間裡，看見了什麼。</p></div>
+          <div class="step"><span class="step-number">01</span><h4>呼吸，回到當下</h4><p>從身體覺察開始，留意此刻的感受。</p></div>
+          <span class="step-arrow" aria-hidden="true"></span>
+          <div class="step"><span class="step-number">02</span><h4>對話，或自由創作</h4><p>讓還沒說清楚的想法，慢慢浮現。</p></div>
+          <span class="step-arrow" aria-hidden="true"></span>
+          <div class="step"><span class="step-number">03</span><h4>回看自己的發現</h4><p>一起整理這段時間，看見了什麼。</p></div>
         </div>
       </div>
     </article>

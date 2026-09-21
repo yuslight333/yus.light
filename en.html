@@ -422,6 +422,43 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
   .moon { animation: moon-breathe 9s ease-in-out infinite, moon-float 15s ease-in-out infinite; }
 }
 
+
+/* ===== 一對一：文案層級 ===== */
+.experience-grid p.experience-lede { font-size: clamp(18px, 1.55vw, 22px); line-height: 1.85;
+  color: var(--text); letter-spacing: .03em; margin-top: 4px; }
+.experience-grid p.experience-body { font-size: 16px; line-height: 1.95; margin-top: 16px; }
+.experience-grid .soft-note { margin-top: 24px; }
+.continuity { border-top: 0; border-left: 1px solid rgba(196,171,115,.34);
+  padding: 3px 0 3px 20px; margin-top: 36px; }
+
+/* ===== 服務流程：加箭頭 ===== */
+.process-intro { margin-top: 54px; padding-top: 34px; border-top: 1px solid var(--line);
+  font-size: 15px; color: var(--muted); letter-spacing: .04em; }
+.process { margin-top: 24px; padding-top: 0; border-top: 0;
+  grid-template-columns: 1fr auto 1fr auto 1fr; gap: 24px; align-items: start; }
+.process .step { min-width: 0; }
+.step-arrow { align-self: start; margin-top: 31px; position: relative; width: 44px; height: 1px;
+  background: linear-gradient(90deg, rgba(196,171,115,.08), rgba(196,171,115,.55)); }
+.step-arrow::after { content: ""; position: absolute; right: 0; top: -3.5px; width: 7px; height: 7px;
+  border-top: 1px solid rgba(196,171,115,.7); border-right: 1px solid rgba(196,171,115,.7);
+  transform: rotate(45deg); }
+
+@media (max-width: 1079px) {
+  .process { grid-template-columns: 1fr; gap: 0; }
+  .process .step { display: grid; grid-template-columns: 32px 1fr; column-gap: 14px; }
+  .process .step .step-number { grid-row: span 2; margin-top: 4px; }
+  .process .step h4 { margin: 0 0 5px; }
+  .process .step p { grid-column: 2; max-width: none; }
+  .step-arrow { width: 1px; height: 26px; margin: 12px 0 12px 15px;
+    background: linear-gradient(180deg, rgba(196,171,115,.5), rgba(196,171,115,.06)); }
+  .step-arrow::after { right: auto; left: -3px; top: auto; bottom: 0; transform: rotate(135deg); }
+  .process-intro { margin-top: 42px; padding-top: 28px; }
+}
+
+@media (min-width: 1080px) {
+  .process .step p { font-size: clamp(13px, 1.02vw, 15px); max-width: none; text-wrap: balance; }
+}
+
   </style>
 </head>
 <body>
@@ -495,18 +532,21 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
           <div>
             <h3 id="experience-title" class="service-title">Mindful Art Session<br>One-on-One</h3>
             <p class="gold service-meta">60 minutes · NT$ 1,680 · In person / Online</p>
-            <p>Bring something if you have it: work, a relationship, the decision you’ve been circling for months. Or bring nothing at all, and simply practise breathing and remember what it feels like to make something.</p>
-            <p>We begin with breath, move into conversation or drawing, and end by looking together at what came out.</p>
+            <p class="experience-lede">Bring something if you have it. Or bring nothing at all.</p>
+            <p class="experience-body">Work, a relationship, the decision you’ve been circling for months. Any of it can be the starting point. With nothing in mind, we simply practise breathing and remember what it feels like to make something.</p>
             <p class="soft-note">No drawing skill required, and no need to explain yourself first.<br>How “good” it looks has never been the point.</p>
             <a class="button button-outline" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book 60 minutes</a>
             <div class="continuity"><span class="gold">One-month companionship · three sessions · NT$ 4,800</span><p>Walking a stretch of road together, not just solving one question. For anyone in the middle of a big decision.</p></div>
           </div>
           <figure class="experience-photo"><img src="yus-oneonone.webp" width="1000" height="1000" alt="A brush laying gold paint across a deep navy and cream canvas" loading="lazy"><figcaption>From breath, to colour, and back to yourself.</figcaption></figure>
         </div>
+        <p class="process-intro">We begin with breath, move into conversation or drawing, and end by looking together at what came out.</p>
         <div class="process" aria-label="How a one-on-one session runs">
-          <div><span class="step-number">01</span><h4>Breathe, and arrive</h4><p>We start with the body, noticing how this moment feels.</p></div>
-          <div><span class="step-number">02</span><h4>Talk, or simply create</h4><p>Letting the half-formed thoughts surface at their own pace.</p></div>
-          <div><span class="step-number">03</span><h4>Look back at what surfaced</h4><p>Together we make sense of what came up.</p></div>
+          <div class="step"><span class="step-number">01</span><h4>Breathe, and arrive</h4><p>Start with the body, noticing how this moment feels.</p></div>
+          <span class="step-arrow" aria-hidden="true"></span>
+          <div class="step"><span class="step-number">02</span><h4>Talk, or simply create</h4><p>Letting half-formed thoughts surface at their own pace.</p></div>
+          <span class="step-arrow" aria-hidden="true"></span>
+          <div class="step"><span class="step-number">03</span><h4>Look back at what surfaced</h4><p>Making sense together of what came up.</p></div>
         </div>
       </div>
     </article>
