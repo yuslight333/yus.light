@@ -358,6 +358,35 @@ footer p + p { margin-top: 12px; }
   .voices-track blockquote { width: min(352px, 100%); margin: 0 14px 14px; }
 }
 
+
+/* ===== 首屏文字編排 ===== */
+.hero-inner { min-height: 600px; padding-block: 60px 84px; }
+.hero-copy { max-width: 720px; }
+.hero-service { font-size: 13px; letter-spacing: .26em; line-height: 1.6; }
+h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015em; margin: 21px 0 26px; }
+.hero-description { font-size: 17px; line-height: 1.78; max-width: 31em; color: #cdced5; }
+.hero-invitation { margin-top: 10px; font-size: 15px; line-height: 1.7; }
+.hero-invitation + .hero-format { display: inline-flex; align-items: baseline; flex-wrap: wrap;
+  margin-top: 27px; padding-top: 17px; border-top: 1px solid rgba(196,171,115,.24);
+  font-size: 13px; letter-spacing: .09em; color: #9fa1ac; }
+.hero-format span { margin-inline: 9px; opacity: .65; }
+.hero .actions { margin-top: 27px; gap: 22px; }
+/* 新配圖比例 */
+.experience-photo img { aspect-ratio: 1; object-position: 50% 50%; }
+.workshop-photo img { aspect-ratio: 1; object-position: 50% 50%; }
+.about-image img { aspect-ratio: 1; object-position: 50% 50%; }
+@media (max-width: 720px) {
+  .hero-inner { min-height: auto; padding-top: 118px; padding-bottom: 58px; }
+  .hero-service { font-size: 12px; letter-spacing: .18em; }
+  h1 { font-size: clamp(26px, 7.4vw, 40px); line-height: 1.4; letter-spacing: .004em; margin: 15px 0 19px; }
+  .hero-description { font-size: 15.5px; line-height: 1.75; max-width: none; }
+  .hero-invitation { margin-top: 8px; font-size: 13.5px; }
+  .hero-invitation + .hero-format { margin-top: 21px; padding-top: 14px; font-size: 12px; letter-spacing: .04em; }
+  .hero-format span { margin-inline: 6px; }
+  .hero .actions { margin-top: 22px; gap: 16px; }
+  .experience-photo img, .workshop-photo img, .about-image img { aspect-ratio: 1; object-position: 50% 50%; }
+}
+
   </style>
 </head>
 <body>
@@ -436,7 +465,7 @@ footer p + p { margin-top: 12px; }
             <a class="button button-outline" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">預約 60 分鐘</a>
             <div class="continuity"><span class="gold">一個月探索陪伴 · 三次 · NT$ 4,800</span><p>走一段路，不只解一個題。適合正在做某個大決定的人。</p></div>
           </div>
-          <figure class="experience-photo"><img src="yus-hands.webp" width="1000" height="1333" alt="用手在藍綠色圓形畫布上自由創作" loading="lazy"><figcaption>從呼吸，到顏色，再回到自己。</figcaption></figure>
+          <figure class="experience-photo"><img src="yus-oneonone.webp" width="1000" height="1000" alt="畫筆將金色顏料落在深藍與米白的畫布上" loading="lazy"><figcaption>從呼吸，到顏色，再回到自己。</figcaption></figure>
         </div>
         <div class="process" aria-label="一對一體驗流程">
           <div><span class="step-number">01</span><h4>呼吸，回到當下</h4><p>從身體覺察開始，留意此刻的感受。</p></div>
@@ -455,7 +484,7 @@ footer p + p { margin-top: 12px; }
         <article class="service-row workshop" id="workshop" aria-labelledby="workshop-title">
           <div class="service-symbol"><span class="phase full" aria-hidden="true"></span></div>
           <div class="service-description"><p class="eyebrow">滿月 · FULL MOON</p><h3 id="workshop-title">正念藝術工作坊</h3><p class="gold service-meta">小班 · 實體／線上 · 依場次</p><p>用畫筆和顏色，把說不出來的感覺放到紙上。不需要會畫畫。</p><p>曾於上海、台北、峇里島舉辦，也接受企業客製化。</p><div class="actions"><a class="button button-outline" href="https://docs.google.com/forms/d/e/1FAIpQLScY_tBePAMrAd-CfUV7NN4MFvtN8tGekkn8nZG9oIFbTguRHg/viewform" target="_blank" rel="noopener noreferrer">查看工作坊場次</a><a class="text-link" href="mailto:hello@yuslight.com">企業定製洽詢</a></div></div>
-          <figure class="workshop-photo"><img src="yus-workshop.webp" width="1000" height="1333" alt="工作坊學員以粉彩在圓形畫布上創作" loading="lazy"></figure>
+          <figure class="workshop-photo"><img src="yus-circle.webp" width="1000" height="1000" alt="工作坊學員圍坐成一圈，以粉彩在圓形畫板上創作" loading="lazy"></figure>
         </article>
       </div>
     </div>
@@ -479,7 +508,7 @@ footer p + p { margin-top: 12px; }
         <p class="eyebrow ruled">關於 YUS</p>
         <h2 id="about-title" class="about-heading">美不是裝飾，<br>是一種<span class="gold">日常可以用的工具。</span></h2>
         <div class="about-grid">
-          <figure class="about-image"><img src="yus-brush.webp" width="1000" height="1088" alt="畫筆將金色顏料落在深藍與米白色的畫布上，呈現細緻的顏料紋理" loading="lazy"></figure>
+          <figure class="about-image"><img src="yus-about.webp" width="1100" height="1100" alt="YUS 主視覺：ART + COACHING = REAL TRANSFORMATION" loading="lazy"></figure>
           <div class="about-story"><p>我做了十年商業行銷，很會幫品牌說話，卻花了很久才學會聽自己說話。把我拉回來的從來不是更用力的方法，而是一些很小的東西——一筆顏色、一段真誠對話、一張好看的紙。</p><p>所以有了 YUS：把藝術和覺察，變成生活裡隨手可得的工具。不是要你成為更好的人，是陪你想起——你本來就夠了。</p>
             <aside class="founder"><p class="gold aside-label">主理人 · S</p><p>臺北藝術大學研究所畢業，十餘年品牌行銷與正念冥想實踐，2019 年取得正念培訓師認證。</p><p>現從事品牌諮詢、正念呼吸與藝術療癒——用最理性的腦，做最感性的對話。</p></aside>
           </div>
