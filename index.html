@@ -387,6 +387,34 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
   .experience-photo img, .workshop-photo img, .about-image img { aspect-ratio: 1; object-position: 50% 50%; }
 }
 
+
+/* ===== 月亮與星點（恢復動態）===== */
+.moon { box-shadow: 0 0 88px 18px rgba(239,228,204,.13); animation: moon-breathe 9s ease-in-out infinite; }
+.star { animation: star-twinkle 6s ease-in-out infinite; }
+.star-two { animation-delay: 1.4s; }
+.star-three { animation-delay: 2.8s; }
+.star-four { top: 150px; left: 47%; width: 2px; height: 2px; animation-delay: 4.1s; }
+.star-five { bottom: 175px; left: 13%; width: 2px; height: 2px; animation-delay: 2.1s; }
+.star-six { top: 320px; right: 12%; width: 2px; height: 2px; animation-delay: 5.3s; }
+@keyframes moon-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+@keyframes star-twinkle { 0%, 100% { opacity: .22; } 50% { opacity: .85; } }
+
+/* ===== Who it's for ===== */
+.who-label { font-size: 11px; letter-spacing: .32em; opacity: .7; margin-bottom: 11px; }
+
+/* ===== 訂製畫：兩張等寬等高、上緣對齊 ===== */
+.artwork-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+.artwork-detail { padding-top: 0; }
+.artwork-crop { aspect-ratio: 4 / 5; }
+@media (max-width: 720px) {
+  .artwork-grid { grid-template-columns: 1fr; }
+  .artwork-crop { aspect-ratio: 1; }
+  .star-four, .star-five, .star-six { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .moon, .star, .voices-track { animation: none !important; }
+}
+
   </style>
 </head>
 <body>
@@ -405,11 +433,11 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-inner">
         <div class="moon" aria-hidden="true"></div>
-        <div class="star star-one" aria-hidden="true"></div><div class="star star-two" aria-hidden="true"></div><div class="star star-three" aria-hidden="true"></div>
+        <div class="star star-one" aria-hidden="true"></div><div class="star star-two" aria-hidden="true"></div><div class="star star-three" aria-hidden="true"></div><div class="star star-four" aria-hidden="true"></div><div class="star star-five" aria-hidden="true"></div><div class="star star-six" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="eyebrow hero-service" lang="en">Mindfulness · Art · Awareness</p>
           <h1 id="hero-title">你可以有所成就，<br><em>也可以活得輕一點。</em></h1>
-          <p class="hero-description">YUS 結合正念呼吸、藝術創作與一對一對話，<br class="desktop-break">陪你整理感受、聽見自己的需要，探索接下來的方向。</p>
+          <p class="hero-description">結合正念呼吸、藝術創作與一對一對話，<br class="desktop-break">陪你整理感受、聽見自己的需要，探索接下來的方向。</p>
           <p class="hero-invitation">不必先把感受說清楚，也可以從一筆顏色開始。</p>
           <p class="hero-format">60 分鐘 <span>·</span> 線上／實體 <span>·</span> 無需繪畫經驗</p>
           <div class="actions">
@@ -423,6 +451,7 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
     <section class="section audience" id="for-you" aria-labelledby="audience-title">
       <div class="wrap audience-grid">
         <div class="audience-heading">
+          <p class="eyebrow who-label">WHO IT'S FOR</p>
           <p class="eyebrow ruled">給創業者、管理者，<br class="audience-break">與習慣扛起責任的人</p>
           <h2 id="audience-title">你很會把事情處理好。<br>但自己的感受，<br><span class="gold">常常被放到最後。</span></h2>
         </div>
@@ -508,7 +537,7 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
         <p class="eyebrow ruled">關於 YUS</p>
         <h2 id="about-title" class="about-heading">美不是裝飾，<br>是一種<span class="gold">日常可以用的工具。</span></h2>
         <div class="about-grid">
-          <figure class="about-image"><img src="yus-about.webp" width="1100" height="1100" alt="YUS 主視覺：ART + COACHING = REAL TRANSFORMATION" loading="lazy"></figure>
+          <figure class="about-image"><img src="yus-about2.webp" width="1100" height="1100" alt="YUS 主視覺：ART + COACHING = REAL TRANSFORMATION" loading="lazy"></figure>
           <div class="about-story"><p>我做了十年商業行銷，很會幫品牌說話，卻花了很久才學會聽自己說話。把我拉回來的從來不是更用力的方法，而是一些很小的東西——一筆顏色、一段真誠對話、一張好看的紙。</p><p>所以有了 YUS：把藝術和覺察，變成生活裡隨手可得的工具。不是要你成為更好的人，是陪你想起——你本來就夠了。</p>
             <aside class="founder"><p class="gold aside-label">主理人 · S</p><p>臺北藝術大學研究所畢業，十餘年品牌行銷與正念冥想實踐，2019 年取得正念培訓師認證。</p><p>現從事品牌諮詢、正念呼吸與藝術療癒——用最理性的腦，做最感性的對話。</p></aside>
           </div>
@@ -524,12 +553,12 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
           <div class="voices-track">
             <blockquote><p>「透過 S 很平穩且柔和的引導，逐漸在過程中放鬆，也進而將自己之前受困但尚未成形的想法聚合，發現自己的盲點與獲得觀點的支持。」</p><cite>— 台北 · 產品經理</cite></blockquote>
             <blockquote><p>「我一直以為我想當女強人，但畫圖後我發現，潛意識想要的是舒服的家、溫柔狀態的我——而我現在已經是這樣了，根本不用羨慕別人。」</p><cite>— 資深 HR</cite></blockquote>
-            <blockquote><p>「我來提反饋，S 你好厲害！」</p><cite>— 西塔療癒師 · 上海</cite></blockquote>
+            <blockquote><p>「平常大家找我，都是希望我給答案。這一個小時裡，我不用替任何人解決問題，也不用證明自己過得很好。有人陪我慢下來，聽聽我自己怎麼想，這件事對我很難得。」</p><cite>— 品牌企劃 · 上海</cite></blockquote>
             <blockquote><p>「我沒想過我跟老公合起來是這個顏色，流動的山，他本人真的很喜歡山。」</p><cite>— 訂製畫客戶</cite></blockquote>
             <blockquote><p>「工作坊好有趣！我之前在澳洲參加過類似的，但這個更好玩。」</p><cite>— 上海 · 藝術系學生</cite></blockquote>
             <blockquote aria-hidden="true"><p>「透過 S 很平穩且柔和的引導，逐漸在過程中放鬆，也進而將自己之前受困但尚未成形的想法聚合，發現自己的盲點與獲得觀點的支持。」</p><cite>— 台北 · 產品經理</cite></blockquote>
             <blockquote aria-hidden="true"><p>「我一直以為我想當女強人，但畫圖後我發現，潛意識想要的是舒服的家、溫柔狀態的我——而我現在已經是這樣了，根本不用羨慕別人。」</p><cite>— 資深 HR</cite></blockquote>
-            <blockquote aria-hidden="true"><p>「我來提反饋，S 你好厲害！」</p><cite>— 西塔療癒師 · 上海</cite></blockquote>
+            <blockquote aria-hidden="true"><p>「平常大家找我，都是希望我給答案。這一個小時裡，我不用替任何人解決問題，也不用證明自己過得很好。有人陪我慢下來，聽聽我自己怎麼想，這件事對我很難得。」</p><cite>— 品牌企劃 · 上海</cite></blockquote>
             <blockquote aria-hidden="true"><p>「我沒想過我跟老公合起來是這個顏色，流動的山，他本人真的很喜歡山。」</p><cite>— 訂製畫客戶</cite></blockquote>
             <blockquote aria-hidden="true"><p>「工作坊好有趣！我之前在澳洲參加過類似的，但這個更好玩。」</p><cite>— 上海 · 藝術系學生</cite></blockquote>
           </div>

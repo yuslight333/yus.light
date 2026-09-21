@@ -387,6 +387,34 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
   .experience-photo img, .workshop-photo img, .about-image img { aspect-ratio: 1; object-position: 50% 50%; }
 }
 
+
+/* ===== 月亮與星點（恢復動態）===== */
+.moon { box-shadow: 0 0 88px 18px rgba(239,228,204,.13); animation: moon-breathe 9s ease-in-out infinite; }
+.star { animation: star-twinkle 6s ease-in-out infinite; }
+.star-two { animation-delay: 1.4s; }
+.star-three { animation-delay: 2.8s; }
+.star-four { top: 150px; left: 47%; width: 2px; height: 2px; animation-delay: 4.1s; }
+.star-five { bottom: 175px; left: 13%; width: 2px; height: 2px; animation-delay: 2.1s; }
+.star-six { top: 320px; right: 12%; width: 2px; height: 2px; animation-delay: 5.3s; }
+@keyframes moon-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+@keyframes star-twinkle { 0%, 100% { opacity: .22; } 50% { opacity: .85; } }
+
+/* ===== Who it's for ===== */
+.who-label { font-size: 11px; letter-spacing: .32em; opacity: .7; margin-bottom: 11px; }
+
+/* ===== 訂製畫：兩張等寬等高、上緣對齊 ===== */
+.artwork-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+.artwork-detail { padding-top: 0; }
+.artwork-crop { aspect-ratio: 4 / 5; }
+@media (max-width: 720px) {
+  .artwork-grid { grid-template-columns: 1fr; }
+  .artwork-crop { aspect-ratio: 1; }
+  .star-four, .star-five, .star-six { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .moon, .star, .voices-track { animation: none !important; }
+}
+
   </style>
 </head>
 <body>
@@ -405,12 +433,12 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-inner">
         <div class="moon" aria-hidden="true"></div>
-        <div class="star star-one" aria-hidden="true"></div><div class="star star-two" aria-hidden="true"></div><div class="star star-three" aria-hidden="true"></div>
+        <div class="star star-one" aria-hidden="true"></div><div class="star star-two" aria-hidden="true"></div><div class="star star-three" aria-hidden="true"></div><div class="star star-four" aria-hidden="true"></div><div class="star star-five" aria-hidden="true"></div><div class="star star-six" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="eyebrow hero-service" lang="en">Mindfulness · Art · Awareness</p>
           <h1 id="hero-title">You can build something,<br><em>and still live lightly.</em></h1>
-          <p class="hero-description">YUS brings together mindful breathing, art-making and one-on-one conversation to help you sort through how you feel, hear what you need, and explore where to go next.</p>
-          <p class="hero-invitation">You don’t have to explain yourself first. You can begin with a single stroke of colour.</p>
+          <p class="hero-description">Mindful breathing, art-making and one-on-one conversation &mdash;<br class="desktop-break">space to hear what you actually need.</p>
+          <p class="hero-invitation">You don’t have to explain yourself first. Start with a single stroke of colour.</p>
           <p class="hero-format">60 minutes <span>·</span> Online / In person <span>·</span> No drawing experience needed</p>
           <div class="actions">
             <a class="button button-gold" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book a 1-on-1 session</a>
@@ -423,16 +451,17 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
     <section class="section audience" id="for-you" aria-labelledby="audience-title">
       <div class="wrap audience-grid">
         <div class="audience-heading">
+          <p class="eyebrow who-label">WHO IT’S FOR</p>
           <p class="eyebrow ruled">For founders, leaders,<br class="audience-break">and anyone used to carrying the weight</p>
-          <h2 id="audience-title">You’re good at getting things handled.<br>But how you feel<br><span class="gold">tends to come last.</span></h2>
+          <h2 id="audience-title">You’re good at handling things.<br>But how you feel<br><span class="gold">tends to come last.</span></h2>
         </div>
         <div class="audience-copy">
           <ul class="audience-list">
             <li>At work you make the calls, solve the problems, and carry other people’s expectations.</li>
             <li>Even when you clear some time, the next thing to handle is already running in your head.</li>
-            <li>Asked what you want, you can name the next goal straight away, but it takes longer to say how you actually want to live.</li>
+            <li>Asked what you want, you can name the next goal right away &mdash; but it takes longer to say how you actually want to live.</li>
           </ul>
-          <p class="audience-permission">If any of this sounds familiar,<br>this hour can be yours first.</p>
+          <p class="audience-permission">If any of this sounds familiar,<br>this hour is yours first.</p>
         </div>
       </div>
     </section>
@@ -442,7 +471,7 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
         <p class="eyebrow ruled">Services · Four ways to begin</p>
         <div class="services-heading">
           <h2 id="services-title">The moon never stays in one place.<br>Neither do you.</h2>
-          <p>From a one-on-one conversation to creating together,<br>choose the way that fits where you are now.</p>
+          <p>From a one-on-one conversation to creating in a group &mdash;<br>choose the way that fits where you are now.</p>
         </div>
         <nav class="service-index" aria-label="Overview of the four services">
           <a class="index-primary" href="#experience"><span class="index-phase"><span class="phase quarter" aria-hidden="true"></span> 01</span><span class="index-title">One-on-One Session</span><span class="index-description">Sort through feelings, find direction</span></a>
@@ -459,9 +488,9 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
           <div>
             <h3 id="experience-title" class="service-title">Mindful Art Session<br>One-on-One</h3>
             <p class="gold service-meta">60 minutes · NT$ 1,680 · In person / Online</p>
-            <p>Bring something if you have it: work, a relationship, the decision you have been circling for months. Or bring nothing at all, and simply practise breathing and remember what it feels like to make something.</p>
+            <p>Bring something if you have it: work, a relationship, the decision you’ve been circling for months. Or bring nothing at all, and simply practise breathing and remember what it feels like to make something.</p>
             <p>We begin with breath, move into conversation or drawing, and end by looking together at what came out.</p>
-            <p class="soft-note">No drawing skill required, and no need to explain yourself first.<br>How good it looks was never the point here.</p>
+            <p class="soft-note">No drawing skill required, and no need to explain yourself first.<br>How “good” it looks has never been the point.</p>
             <a class="button button-outline" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book 60 minutes</a>
             <div class="continuity"><span class="gold">One-month companionship · three sessions · NT$ 4,800</span><p>Walking a stretch of road together, not just solving one question. For anyone in the middle of a big decision.</p></div>
           </div>
@@ -470,7 +499,7 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
         <div class="process" aria-label="How a one-on-one session runs">
           <div><span class="step-number">01</span><h4>Breathe, and arrive</h4><p>We start with the body, noticing how this moment feels.</p></div>
           <div><span class="step-number">02</span><h4>Talk, or simply create</h4><p>Letting the half-formed thoughts surface at their own pace.</p></div>
-          <div><span class="step-number">03</span><h4>Look back at what surfaced</h4><p>We gather up what you noticed during the hour.</p></div>
+          <div><span class="step-number">03</span><h4>Look back at what surfaced</h4><p>Together we make sense of what came up.</p></div>
         </div>
       </div>
     </article>
@@ -483,7 +512,7 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
         </article>
         <article class="service-row workshop" id="workshop" aria-labelledby="workshop-title">
           <div class="service-symbol"><span class="phase full" aria-hidden="true"></span></div>
-          <div class="service-description"><p class="eyebrow">FULL MOON</p><h3 id="workshop-title">Mindful Art Workshop</h3><p class="gold service-meta">Small group · In person / Online · By session</p><p>Using brush and colour to put onto paper what words cannot quite reach. No drawing skill required.</p><p>Past workshops in Shanghai, Taipei and Bali. Private and corporate sessions welcome.</p><div class="actions"><a class="button button-outline" href="https://docs.google.com/forms/d/e/1FAIpQLScY_tBePAMrAd-CfUV7NN4MFvtN8tGekkn8nZG9oIFbTguRHg/viewform" target="_blank" rel="noopener noreferrer">See upcoming workshops</a><a class="text-link" href="mailto:hello@yuslight.com">Corporate enquiries</a></div></div>
+          <div class="service-description"><p class="eyebrow">FULL MOON</p><h3 id="workshop-title">Mindful Art Workshop</h3><p class="gold service-meta">Small group · In person / Online · By session</p><p>Brush and colour, to put on paper what words can’t quite reach. No drawing skill required.</p><p>Past workshops in Shanghai, Taipei and Bali. Private and corporate sessions welcome.</p><div class="actions"><a class="button button-outline" href="https://docs.google.com/forms/d/e/1FAIpQLScY_tBePAMrAd-CfUV7NN4MFvtN8tGekkn8nZG9oIFbTguRHg/viewform" target="_blank" rel="noopener noreferrer">See upcoming workshops</a><a class="text-link" href="mailto:hello@yuslight.com">Corporate enquiries</a></div></div>
           <figure class="workshop-photo"><img src="yus-circle.webp" width="1000" height="1000" alt="Workshop participants sitting in a circle, drawing with pastels on round boards" loading="lazy"></figure>
         </article>
       </div>
@@ -506,11 +535,11 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="wrap">
         <p class="eyebrow ruled">About YUS</p>
-        <h2 id="about-title" class="about-heading">Beauty is not decoration,<br>it is <span class="gold">a tool you can use every day.</span></h2>
+        <h2 id="about-title" class="about-heading">Beauty isn’t decoration &mdash;<br>it’s <span class="gold">a tool you can use every day.</span></h2>
         <div class="about-grid">
-          <figure class="about-image"><img src="yus-about.webp" width="1100" height="1100" alt="YUS key visual: ART + COACHING = REAL TRANSFORMATION" loading="lazy"></figure>
-          <div class="about-story"><p>I spent ten years in commercial marketing, helping brands find their voice, while it took me far longer to learn how to listen to my own. What brought me back was never a harder push, but small things: a stroke of colour, an honest conversation, a beautiful sheet of paper.</p><p>That is how YUS began: turning art and awareness into tools you can reach for in everyday life. This is not about becoming a better person. It is about remembering that you already are enough.</p>
-            <aside class="founder"><p class="gold aside-label">Founder · S</p><p>A graduate of Taipei National University of the Arts, with over a decade in brand marketing and mindfulness practice, certified as a mindfulness trainer in 2019.</p><p>Now working in brand consulting, mindful breathing and art facilitation, bringing the most rational mind to the most emotional conversations.</p></aside>
+          <figure class="about-image"><img src="yus-about2.webp" width="1100" height="1100" alt="YUS key visual: ART + COACHING = REAL TRANSFORMATION" loading="lazy"></figure>
+          <div class="about-story"><p>I spent ten years in commercial marketing helping brands find their voice, and far longer learning to listen to my own. What brought me back was never a harder push, but small things: a stroke of colour, an honest conversation, a beautiful sheet of paper.</p><p>That’s how YUS began: turning art and awareness into tools you can reach for in everyday life. It isn’t about becoming a better person &mdash; it’s about remembering you’re already enough.</p>
+            <aside class="founder"><p class="gold aside-label">Founder · S</p><p>A graduate of Taipei National University of the Arts, with over a decade in brand marketing and mindfulness practice, certified as a mindfulness trainer in 2019.</p><p>Now working across brand consulting, mindful breathing and art facilitation &mdash; bringing the most rational mind to the most emotional conversations.</p></aside>
           </div>
         </div>
       </div>
@@ -519,17 +548,17 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
     <section class="section voices" id="voices" aria-labelledby="voices-title">
       <div class="wrap">
         <p class="eyebrow">IN THEIR WORDS</p>
-        <h2 id="voices-title">It does not stop when the hour does.</h2>
+        <h2 id="voices-title">It doesn’t stop when the hour does.</h2>
         <div class="voices-marquee">
           <div class="voices-track">
             <blockquote><p>“With S’s steady, gentle guidance I gradually relaxed, and the thoughts I had been stuck on, still half-formed, started to come together. I found my blind spots, and found support for a new perspective.”</p><cite>— Product Manager · Taipei</cite></blockquote>
             <blockquote><p>“I always thought I wanted to be the powerhouse. But after drawing, I realised what I actually wanted was a comfortable home and a gentler version of myself, and I am already there. There was nothing to envy.”</p><cite>— Senior HR Director</cite></blockquote>
-            <blockquote><p>“Just here to give feedback: S, you are amazing!”</p><cite>— ThetaHealing Practitioner · Shanghai</cite></blockquote>
+            <blockquote><p>“People usually come to me for answers. In that hour I didn’t have to solve anyone’s problem, or prove I was doing fine. Someone slowed down with me and listened to what I actually thought &mdash; that’s rare for me.”</p><cite>— Brand Strategist · Shanghai</cite></blockquote>
             <blockquote><p>“I never imagined my husband and I would come out as this colour: flowing mountains. He really does love mountains.”</p><cite>— Commission Client</cite></blockquote>
             <blockquote><p>“The workshop was so much fun. I did something similar in Australia, but this one was better.”</p><cite>— Art Student · Shanghai</cite></blockquote>
             <blockquote aria-hidden="true"><p>“With S’s steady, gentle guidance I gradually relaxed, and the thoughts I had been stuck on, still half-formed, started to come together. I found my blind spots, and found support for a new perspective.”</p><cite>— Product Manager · Taipei</cite></blockquote>
             <blockquote aria-hidden="true"><p>“I always thought I wanted to be the powerhouse. But after drawing, I realised what I actually wanted was a comfortable home and a gentler version of myself, and I am already there. There was nothing to envy.”</p><cite>— Senior HR Director</cite></blockquote>
-            <blockquote aria-hidden="true"><p>“Just here to give feedback: S, you are amazing!”</p><cite>— ThetaHealing Practitioner · Shanghai</cite></blockquote>
+            <blockquote aria-hidden="true"><p>“People usually come to me for answers. In that hour I didn’t have to solve anyone’s problem, or prove I was doing fine. Someone slowed down with me and listened to what I actually thought &mdash; that’s rare for me.”</p><cite>— Brand Strategist · Shanghai</cite></blockquote>
             <blockquote aria-hidden="true"><p>“I never imagined my husband and I would come out as this colour: flowing mountains. He really does love mountains.”</p><cite>— Commission Client</cite></blockquote>
             <blockquote aria-hidden="true"><p>“The workshop was so much fun. I did something similar in Australia, but this one was better.”</p><cite>— Art Student · Shanghai</cite></blockquote>
           </div>
@@ -537,9 +566,9 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
       </div>
     </section>
 
-    <section class="belief" aria-labelledby="belief-title"><div class="wrap"><p class="eyebrow belief-label">A LIGHTER WAY TO LIVE</p><h2 id="belief-title">Success does not have to cost you<br class="audience-break"><span class="gold">everything you have</span>.</h2><p class="belief-copy">A little less pulling inside, a little more room to choose.<br>Beauty, to make life lighter.</p><p class="belief-signature">YUS · you are already ready</p></div></section>
+    <section class="belief" aria-labelledby="belief-title"><div class="wrap"><p class="eyebrow belief-label">A LIGHTER WAY TO LIVE</p><h2 id="belief-title">Success doesn’t have to cost you<br class="audience-break"><span class="gold">everything you have</span>.</h2><p class="belief-copy">Less pulling inside, more room to choose.<br>Beauty, to make life lighter.</p><p class="belief-signature">YUS · you are already ready</p></div></section>
 
-    <section class="contact section" id="contact" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">YUS · YOU ARE ALREADY READY</p><h2 id="contact-title">If you have read this far,<br>and something moved a little,</h2><p>You do not have to have it figured out. Come, and we will figure it out together.</p><p class="contact-format">Mindful Art Session · One-on-One · 60 minutes · NT$ 1,680</p><a class="button button-gold" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book a 1-on-1</a><p class="contact-email">For collaborations, conversations and ideas<br><a href="mailto:hello@yuslight.com">hello@yuslight.com</a></p></div></section>
+    <section class="contact section" id="contact" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">YUS · YOU ARE ALREADY READY</p><h2 id="contact-title">If you’ve read this far<br>and something moved —</h2><p>You don’t have to have it figured out. Come, and we’ll work it out together.</p><p class="contact-format">Mindful Art Session · One-on-One · 60 minutes · NT$ 1,680</p><a class="button button-gold" href="https://calendly.com/yuslight/1-on-1-mindful-art-healing" target="_blank" rel="noopener noreferrer">Book a 1-on-1</a><p class="contact-email">For collaborations, conversations and ideas<br><a href="mailto:hello@yuslight.com">hello@yuslight.com</a></p></div></section>
   </main>
   <footer><div class="wrap"><p>you are already ready</p><p>© 2026 YUS · Beauty, to make life lighter</p></div></footer>
   <script>
