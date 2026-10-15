@@ -1008,8 +1008,6 @@ window.YUS_INTRO = {
       'radial-gradient(circle at 36% 32%, #FBF7EC, #EDE7CD 52%, #D9CDA9 78%, #C9BC95)';
   }
 
-  document.documentElement.classList.add('js-intro');
-
   var settled = false;
   function settle() {
     if (settled) return;
@@ -1048,17 +1046,20 @@ window.YUS_INTRO = {
   }
 
   function start() {
-    if (started) return;
+    if (started || settled) return;
     started = true;
+    /* 文字入場動畫只在真的要播時才掛上，沒播到就不會有隱形文字 */
+    root.classList.add('js-intro');
     raf = requestAnimationFrame(frame);
-    setTimeout(settle, C.duration + 2500);   /* 保險絲：任何情況下都不留白 */
+    setTimeout(settle, C.duration + 2500);   /* 保險絲：播到一半卡住也會定格 */
   }
 
-  /* 分頁在背景時不播，等使用者真的看到再開始 */
+  /* 分頁在背景時先不播，等使用者真的看到再開始 */
   if (document.hidden) {
     document.addEventListener('visibilitychange', function onVis() {
       if (!document.hidden) { document.removeEventListener('visibilitychange', onVis); start(); }
     });
+    setTimeout(function () { if (!started) settle(); }, 20000);  /* 長時間在背景就直接定格 */
   } else {
     start();
   }
