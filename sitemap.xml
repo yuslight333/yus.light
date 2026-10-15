@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yuslight.com/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yuslight.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yuslight.com/cn.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://yuslight.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yuslight.com/"/>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://yuslight.com/cn.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yuslight.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yuslight.com/cn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yuslight.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yuslight.com/"/>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://yuslight.com/en.html</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yuslight.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yuslight.com/cn.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://yuslight.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yuslight.com/"/>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>
