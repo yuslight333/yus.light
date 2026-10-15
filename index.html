@@ -565,13 +565,19 @@ h1 { font-size: clamp(34px, 4.7vw, 58px); line-height: 1.3; letter-spacing: .015
 .yus-intro .hero-copy .hero-description:nth-of-type(1) { animation: yus-up6 .85s var(--yus-e) 1.20s both; }
 .yus-intro .hero-copy .hero-description:nth-of-type(2) { animation: yus-up6 .85s var(--yus-e) 1.35s both; }
 
-/* 保險：3.4 秒後強制讓文字就位，動畫出問題也不會留白 */
+/* 保險：3.4 秒後強制讓文字與月亮就位，動畫出問題也不會留白 */
 .yus-safe .hero-copy .hero-service,
 .yus-safe .hero-copy h1 .l1,
 .yus-safe .hero-copy h1 .l2,
 .yus-safe .hero-copy .hero-description {
   animation: none !important; opacity: 1 !important; transform: none !important;
 }
+.yus-safe .moon-stage .moon     { animation: none !important; opacity: 1 !important; transform: none !important; }
+.yus-safe .moon-stage .moon-lit { animation: none !important; opacity: 1 !important; }
+.yus-safe .moon-stage .moon-shadow { animation: none !important; opacity: 0 !important; }
+.yus-safe .moon-stage .dawn     { animation: none !important; opacity: 1 !important; }
+.yus-safe .moon-stage .glow     { animation: yus-glow-breathe 9s ease-in-out infinite !important;
+                                  opacity: 1 !important; }
 
 /* 手機：月亮在文案上方靠右，降低模糊成本 */
 @media (max-width: 1020px) { .moon-stage { width: 142px; height: 142px; top: 8px; right: 8px; } }
