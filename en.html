@@ -502,6 +502,16 @@ blockquote p { font-size: 18px; }
 @media (max-width: 720px) { .artwork-leadtime { margin-top: 11px; font-size: 12.5px; } }
 
 
+
+/* 英文版首屏段落：行高收緊、避免孤字、取消強制斷行 */
+.hero-copy .hero-description { max-width: 33em; line-height: 1.6; text-wrap: pretty; }
+.hero-copy .hero-description + .hero-description { margin-top: 16px; }
+.hero-copy .hero-description .desktop-break { display: none; }
+@media (max-width: 720px) {
+  .hero-copy .hero-description { max-width: none; line-height: 1.62; }
+  .hero-copy .hero-description + .hero-description { margin-top: 14px; }
+}
+
   </style>
 </head>
 <body>
@@ -524,7 +534,7 @@ blockquote p { font-size: 18px; }
         <div class="hero-copy">
           <p class="eyebrow hero-service" lang="en">Mindfulness · Art · Awareness</p>
           <h1 id="hero-title">You can build something,<br><em>and still live lightly.</em></h1>
-          <p class="hero-description">Mindful art: mindful breathing, art-making, visual exploration and one-on-one conversation.<br class="desktop-break">Space to sort through how you feel, hear what you need, and find your next direction for growth.</p>
+          <p class="hero-description">Mindful art: breathing practice, art-making, visual exploration and one-on-one conversation. Space to hear what you need, and find where you’re growing next.</p>
           <p class="hero-description">You don’t have to explain yourself first. You can begin with a single stroke of colour.</p>
           <p class="hero-format">60–90 minutes <span>·</span> Online / In person <span>·</span> No drawing experience needed</p>
           <div class="actions">
